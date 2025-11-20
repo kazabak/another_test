@@ -1,4 +1,29 @@
 <html>
-  <head></head>
-  <body>hello another test</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Test Landing</title>
+    <script>
+      function getQueryParam(name) {
+        return new URLSearchParams(window.location.search).get(name);
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>hello another test</h1>
+
+    <a id="go" href="#">Go to Offer</a>
+
+    <script>
+      const clickId = getQueryParam("clickid");
+
+      document.getElementById("go").onclick = () => {
+        if (!clickId) {
+          alert("Click ID not found!");
+          return;
+        }
+        window.location.href = "http://3.138.123.234/click?lp=1";
+      };
+    </script>
+  </body>
 </html>
